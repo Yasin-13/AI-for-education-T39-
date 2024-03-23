@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Platform</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+        }
+        .navbar {
+            background-color: white;
+        }
+        .navbar-brand span {
+            color: rgb(39, 207, 39);
+            font-weight:bold;
+            font-size: 2.75rem;
+        }
+
+        .navbar-brand h3 {
+            font-weight:bold;
+            font-size: 2.75rem;
+
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: black !important;
+        }
+        .navbar-nav .nav-link {
+            color: black !important;
+        }
+        .jumbotron {
+            background-color: white;
+            color: black;
+            padding: 100px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .jumbotron h1 {
+            font-size: 3em;
+        }
+        .jumbotron p {
+            font-size: 1.2em;
+        }
+        .btn-primary {
+            background-color:rgb(39, 207, 39);
+            border-color: rgb(39, 207, 39);
+        }
+        .btn-primary:hover {
+            background-color: rgb(39, 207, 39);
+            border-color:rgb(39, 207, 39);
+        }
+        .testimonial {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .testimonial p {
+            font-style: italic;
+            
+        }
+        .testimonial-author {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container ">
+            <a class="navbar-brand " ><h3>Bridge<span>TheGap</span></h3></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Instructors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>Welcome to our Educational Platform</h1>
+            <p><h3>"Education Deserves Equity!"</h3></p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="testimonial">
+                    <p class="mb-0">"This platform has helped me tremendously in my studies. The courses are well-structured, and the instructors are highly knowledgeable."</p>
+                    <p class="testimonial-author">- John Doe</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="testimonial">
+                    <p class="mb-0">"I've been able to enhance my skills and knowledge significantly by taking courses on this platform. Highly recommended!"</p>
+                    <p class="testimonial-author">- Jane Smith</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg">Start Learning Now</a>
+        </div>
+    </div>
+</body>
+</html>

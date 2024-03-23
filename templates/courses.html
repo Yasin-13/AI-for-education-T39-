@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .course-container {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .course-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+        .youtube-thumbnail img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .notes {
+            margin-top: 20px;
+        }
+        .dictionary-digest,
+        .study-material {
+            margin-top: 30px;
+        }
+        .dictionary-digest h5,
+        .study-material h5 {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 mb-4">Courses</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="course-container">
+                    <h5 class="text-primary">Pre Recorded Videos</h5>
+                    <!-- YouTube Thumbnail Container -->
+                    <div class="youtube-thumbnail">
+                        <!-- Insert your YouTube video thumbnail here -->
+                        <!-- Example: -->
+                        <img src="youtube_thumbnail.jpg" alt="YouTube Thumbnail">
+                    </div>
+                    <!-- Notes for Students -->
+                    <div class="notes">
+                        <p>This course consists of pre-recorded videos covering various topics. Watch these videos to learn at your own pace.</p>
+                        <p>Make sure to take notes while watching and feel free to ask questions.</p>
+                    </div>
+                    <!-- Dictionary Digest -->
+                    <div class="dictionary-digest">
+                        <h5 class="text-success">Dictionary Digest</h5>
+                        <p>Here is a list of important terms and their definitions:</p>
+                        <ul>
+                            <li>Term 1: Definition 1</li>
+                            <li>Term 2: Definition 2</li>
+                            <!-- Add more terms and definitions as needed -->
+                        </ul>
+                    </div>
+                    <!-- Study Material -->
+                    <div class="study-material">
+                        <h5 class="text-warning">Study Material</h5>
+                        <p>Additional study material for this course:</p>
+                        <ul>
+                            <li>Study Guide</li>
+                            <li>Practice Exercises</li>
+                            <li>Reference Books</li>
+                            <!-- Add more study materials as needed -->
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary mt-3">Watch Videos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

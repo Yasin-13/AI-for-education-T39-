@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007bff;
+            margin-top: 20px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 15px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        button[type="submit"] {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .subject-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>11th and 12th Test</h1>
+    <form action="/submit" method="post">
+        <h2>Grade 11 Subjects</h2>
+        <div class="subject-container">
+            <h3>Math (Grade 11)</h3>
+            <p>What is the value of x in the equation 2x + 3 = 11?</p>
+            <input type="radio" name="grade11_math" value="1"> a) 4<br>
+            <input type="radio" name="grade11_math" value="2"> b) 6<br>
+            <input type="radio" name="grade11_math" value="3"> c) 7<br>
+            <input type="radio" name="grade11_math" value="4"> d) 8<br>
+        </div>
+        <div class="subject-container">
+            <h3>Science (Grade 11)</h3>
+            <p>What is the atomic number of carbon?</p>
+            <input type="radio" name="grade11_science" value="1"> a) 6<br>
+            <input type="radio" name="grade11_science" value="2"> b) 8<br>
+            <input type="radio" name="grade11_science" value="3"> c) 12<br>
+            <input type="radio" name="grade11_science" value="4"> d) 14<br>
+        </div>
+
+        <h2>Grade 12 Subjects</h2>
+        <div class="subject-container">
+            <h3>Math (Grade 12)</h3>
+            <p>What is the derivative of f(x) = x^2?</p>
+            <input type="radio" name="grade12_math" value="1"> a) 2x<br>
+            <input type="radio" name="grade12_math" value="2"> b) x^2<br>
+            <input type="radio" name="grade12_math" value="3"> c) 2x^2<br>
+            <input type="radio" name="grade12_math" value="4"> d) 2<br>
+        </div>
+        <div class="subject-container">
+            <h3>Science (Grade 12)</h3>
+            <p>What is the formula for photosynthesis?</p>
+            <input type="radio" name="grade12_science" value="1"> a) CO2 + H2O → C6H12O6 + O2<br>
+            <input type="radio" name="grade12_science" value="2"> b) C6H12O6 + O2 → CO2 + H2O<br>
+            <input type="radio" name="grade12_science" value="3"> c) CO2 + O2 → C6H12O6 + H2O<br>
+            <input type="radio" name="grade12_science" value="4"> d) H2O → O2 + CO2<br>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #chatbot-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgb(39, 207, 39);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 9999;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        #chatbot-button:hover {
+            background-color: rgb(39, 207, 39);
+            transform: scale(1.1);
+        }
+
+        /* Chatbot container */
+        #chatbot-container {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 300px;
+            max-height: 400px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            overflow-y: auto;
+            z-index: 9998;
+            display: none;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Chat messages */
+        .chat-message {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            word-wrap: break-word;
+            animation: slideIn 0.3s ease;
+        }
+
+        .user-message {
+            background-color: rgb(39, 207, 39);
+            color: #fff;
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        .chatbot-message {
+            background-color: #f2f2f2;
+            color: #000;
+            align-self: flex-start;
+            text-align: left;
+        }
+
+        /* User input */
+        #user-input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        /* Send button */
+        #send-button {
+            background-color: rgb(39, 207, 39);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+
+        #send-button:hover {
+            background-color: rgb(39, 207, 39)  ;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        body {
+            background-color: #f8f9fa;
+            padding-top: 3%;
+        }
+        .navbar-brand span {
+            color: rgb(39, 207, 39);
+            font-weight:bold;
+            font-size: 2.75rem;
+        }
+        .navbar-brand h3 {
+            font-weight:bold;
+            font-size: 2.75rem;}
+        
+        .card {
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+            border-radius: 15px;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .btn-primary {
+            background-color: rgb(39, 207, 39);
+            border-color: rgb(39, 207, 39);
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand " ><h3>Bridge<span>TheGap</span></h3></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    
+
+    <div class="container mt-4">
+        <h1 class="mb-4">Welcome to the Student Dashboard</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Courses</h5>
+                        <p class="card-text">View and enroll in available courses.</p>
+                        <a href="{{ url_for('courses') }}" class="btn btn-primary">View Courses</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Grades</h5>
+                        <p class="card-text">View your grades for completed courses.</p>
+                        <a href="{{url_for('plot')}}" class="btn btn-primary">View Grades</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Take Test</h5>
+                        <p class="card-text">Click below to take the test:</p>
+                        <a href="test_portal.html" class="btn btn-primary">Take Test</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Understand in Your Own Language</h5>
+                        <p class="card-text">Get course materials translated into your preferred language.</p>
+                        <form action="{{ url_for('translate') }}" method="post">
+                            <button type="submit" class="btn btn-primary">Translate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="chatbot-button">&#128172;</button>
+    <div id="chatbot-container">
+        <div id="chat-messages"></div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button id="send-button">Send</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        var chatbotContainer = document.getElementById("chatbot-container");
+        var chatMessages = document.getElementById("chat-messages");
+
+        function toggleChatbot() {
+            chatbotContainer.style.display = chatbotContainer.style.display === "none" ? "block" : "none";
+        }
+
+        function appendMessage(message, isUser) {
+            var messageDiv = document.createElement("div");
+            messageDiv.classList.add("chat-message");
+            if (isUser) {
+                messageDiv.classList.add("user-message");
+            } else {
+                messageDiv.classList.add("chatbot-message");
+            }
+            messageDiv.innerText = message;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        document.getElementById("chatbot-button").addEventListener("click", toggleChatbot);
+
+        document.getElementById("send-button").addEventListener("click", function() {
+            var userInput = document.getElementById("user-input").value;
+            if (userInput.trim() !== "") {
+                appendMessage("You: " + userInput, true);
+                document.getElementById("user-input").value = "";
+                // Send user input to the server and get response
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "/get_response", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                        appendMessage("Chatbot: " + xhr.responseText, false);
+                    }
+                };
+                xhr.send("user_input=" + userInput);
+            }
+        });
+
+        // Handle Enter key press
+        document.getElementById("user-input").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                document.getElementById("send-button").click();
+            }
+        });
+    </script>
+    
+</body>
+</html>
+    

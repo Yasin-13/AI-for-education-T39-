@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Portal</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+        .test-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .start-test-btn {
+            background-color:  rgb(39, 207, 39);;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .start-test-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .navbar-brand span {
+            color: rgb(39, 207, 39);
+            font-weight:bold;
+            font-size: 2.75rem;
+            
+        }
+        .navbar-brand h3 {
+            color: black;
+            font-weight:bold;
+            font-size: 2.75rem;}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand " ><h3>Bridge<span>TheGap</span></h3></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto ">
+                    <li class="nav-item active">
+                        <a class="nav-link " href="/dashboard" style="color: black"><b>Dashboard</b> <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: black"><b>About</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: black"> <b>Contact</b></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <h1 class="mb-4 text-center">Test Portal</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="test-container">
+                    <h5>Test 1</h5>
+                    <p>This is the content for Test 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod justo a arcu efficitur, eu elementum ipsum venenatis. Nulla sit amet odio nec lectus fermentum vestibulum.</p>
+                    <button class="start-test-btn" onclick="window.location.href='/quiz'">Start Test</button>
+                </div>
+                <div class="test-container">
+                    <h5>Test 2</h5>
+                    <p>This is the content for Test 2. Curabitur auctor, lorem ut placerat efficitur, velit justo elementum purus, nec ultricies enim ex a dolor. Integer efficitur nunc at odio consectetur, vel fermentum justo rutrum.</p>
+                    <button class="start-test-btn" onclick="window.location.href='/quiz'">Start Test</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="test-container">
+                    <h5>Test 3</h5>
+                    <p>This is the content for Test 3. Duis varius neque nec magna euismod, id commodo nisl tincidunt. Maecenas ut ipsum auctor, porta lorem eget, varius lorem. Vestibulum non felis quis odio fringilla.</p>
+                    <button class="start-test-btn" onclick="window.location.href='/quiz1'">Start Test</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

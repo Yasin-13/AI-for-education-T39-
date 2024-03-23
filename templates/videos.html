@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Suggestions</title>
+</head>
+<body>
+    <h1>Video Suggestions</h1>
+    {% if videos %}
+        {% for video in videos %}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.video_id }}" frameborder="0" allowfullscreen></iframe>
+            <p>{{ video.title }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No videos found.</p>
+    {% endif %}
+</body>
+</html>
+

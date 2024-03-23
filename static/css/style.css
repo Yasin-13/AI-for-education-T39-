@@ -1,0 +1,64 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 50px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* Button Styles */
+.btn-custom {
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.btn-primary-custom {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary-custom:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-secondary-custom {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary-custom:hover {
+    background-color: #545b62;
+    border-color: #545b62;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
